@@ -33,35 +33,65 @@
 
         .swiper {
             width: 100%;
-            max-width: calc(100% - (56px*2));
-            height: 390px;
-            padding: 0 50px;
+            height: 153px;
         }
 
         .swiper-slide {
             background-position: center;
             background-size: cover;
-            width: 390px;
-            height: 420px;
+            width: 153px;
+            height: 181px;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            z-index: 999;
+            width: 41px;
+            height: 27px;
+            background-size: contain;
+        }
+
+        .swiper-button-prev {
+            background-image: url("./arrow-prev.svg");
+        }
+
+        .swiper-button-next {
+            background-image: url("./arrow-next.svg");
+        }
+
+        @media screen and (min-width: 768px) {
+            .swiper {
+                height: 344px;
+            }
+
+            .swiper-slide {
+                width: 344px;
+                height: 398px;
+            }
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                width: 96px;
+                height: 64px;
+            }
+        }
+
+        @media screen and (min-width: 1280px) {
+            .swiper {
+                max-width: calc(100% - (56px*2));
+                height: 390px;
+                padding: 0 50px;
+            }
+
+            .swiper-slide {
+                width: 390px;
+                height: 420px;
+            }
         }
 
         .swiper-slide img {
             display: block;
             width: 100%;
-        }
-
-        .swiper-button-prev {
-            background-image: url("./arrow-prev.svg");
-            z-index: 999;
-            width: 96px;
-            height: 64px;
-        }
-
-        .swiper-button-next {
-            background-image: url("./arrow-next.svg");
-            z-index: 999;
-            width: 96px;
-            height: 64px;
         }
 
         .swiper-button-next::after,
@@ -72,29 +102,29 @@
 </head>
 
 <body>
-   <div class="container">
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+    <div class="container">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                </div>
             </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
     </div>
-   </div>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -104,7 +134,7 @@
         var swiper = new Swiper(".mySwiper", {
             effect: "coverflow",
             grabCursor: true,
-              centeredSlides: true,
+            centeredSlides: true,
             slidesPerView: 3,
             coverflowEffect: {
                 rotate: 20,
@@ -119,6 +149,18 @@
                 prevEl: '.swiper-button-prev',
             },
             loop: true,
+            breakpoints: {
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: -8,
+                },
+                768: {
+                    slidesPerView: 2.2,
+                },
+                1280: {
+                    slidesPerView: 3,
+                },
+            },
         });
     </script>
 
