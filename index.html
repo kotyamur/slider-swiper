@@ -170,9 +170,9 @@
                     <div class="swiper-slide">
                         <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
                     </div>
-                    <div class="swiper-slide">
+                    <!-- <div class="swiper-slide">
                         <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                    </div>
+                    </div> -->
                 </div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
@@ -188,7 +188,10 @@
         var swiper = new Swiper(".mySwiper", {
             effect: "coverflow",
             grabCursor: true,
+            // centeredSlidesBounds: true,
             centeredSlides: true,
+            // centerInsufficientSlides: true,
+            
             slidesPerView: 3,
             coverflowEffect: {
                 rotate: 0,
@@ -197,6 +200,7 @@
                 modifier: 1,
                 slideShadows: false,
                 scale: 0.85,
+                
             },
             navigation: {
                 nextEl: '.swiper-button-next',
